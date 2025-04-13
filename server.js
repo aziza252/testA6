@@ -1,3 +1,6 @@
+console.log("Starting server.js...");
+console.log("JWT Secret from Environment:", process.env.JWT_SECRET);
+
 const express = require('express');
 const app = express();
 const cors = require("cors");
