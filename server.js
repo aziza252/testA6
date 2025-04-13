@@ -8,7 +8,7 @@ const dotenv = require("dotenv");
 const passport = require("passport");
 const jwt=require("jsonwebtoken");
 const passportJWT = require("passport-jwt");
-dotenv.config();
+//dotenv.config();
 const userService = require("./user-service.js");
 
 const HTTP_PORT = process.env.PORT || 8080;
