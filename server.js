@@ -75,6 +75,33 @@ app.get('/', (req, res) => {
   });
   
 
+
+  module.exports.getUserById = function (id) {
+    return new Promise(function (resolve, reject) {
+        // Check if the User model is initialized
+        if (!User) {
+            return reject("User model not initialized. Ensure connect() was called.");
+        }
+        // Use Mongoose's findById to search by the primary _id field
+        User.findById(id)
+            .exec() // Execute the query
+            .then(user => {
+                if (!user) {
+                    // No user found for this _id
+                    reject("User not found");
+                } else {
+                    // User found, resolve the promise with the user object
+                    resolve(user);
+                }
+            }).catch(err => {
+                // Handle potential errors during the database query
+                console.error(`Error finding user by ID (${id}):`, err);
+                reject(err);
+            });
+    });
+};
+
+
 app.get("/api/user/favourites", passport.authenticate('jwt', { session: false }), (req, res) => {
     userService.getFavourites(req.user._id)
         .then(data => {
