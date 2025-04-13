@@ -18,8 +18,8 @@ const jwtOptions = {
     secretOrKey: process.env.JWT_SECRET
 };
 
-console.log("Starting server.js...");//
-console.log("JWT Secret from Environment:", process.env.JWT_SECRET);
+//console.log("Starting server.js...");//
+//console.log("JWT Secret from Environment:", process.env.JWT_SECRET);
 
 const jwtStrategy = new passportJWT.Strategy(jwtOptions, (jwt_payload, done) => {
     userService.getUserById(jwt_payload._id)
