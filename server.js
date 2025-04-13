@@ -1,3 +1,17 @@
+/*********************************************************************************
+ * BTI425 – Assignment 6
+ *
+ * I declare that this assignment is my own work in accordance with Seneca &apos;s
+ * Academic Integrity Policy:
+ *
+ * https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
+ *
+ * Name: _Prince Roka Magar___ Student ID: __131981235_ Date: _____2025/04/13___
+ * 
+ *Vercel App (Deployed) Link: ________________api-red-six.vercel.app____
+
+ ********************************************************************************/
+
 const express = require("express");
 const app = express();
 const cors = require("cors");
