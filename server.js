@@ -43,6 +43,7 @@ app.use(cors());
 
 
 app.post("/api/user/register", (req, res) => {
+    console.log("Registering user:", req.body);
     userService.registerUser(req.body)
     .then((msg) => {
         res.json({ "message": msg });
